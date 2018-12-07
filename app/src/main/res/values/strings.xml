@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Vehicle Maintenance</string>
+
+    <string name="app_version">v 1.0</string>
+    <string name="valid_version">1.0</string>
+
+    <string name="app_valid_version">Vehicle Maintenance v 1.0</string>
+
+    <string name="unaurthorise_user">Unauthorized Access</string>
+    <string name="unartho_user"><![CDATA[You are not a registered user to access this app. Please register your mobile phone"'"s ID to the management by click the <b>POST TO REGISTER</b> below. Thank you!]]></string>
+    <string name="refresh_hint_o"><![CDATA[NOTE: If your <b>Device ID</b> displays \"undefined\", just refresh the app by pressing the <b>Refresh button</b> at the upper right corner.]]></string>
+
+    <string name="str_networkmessage">Check your internet connection.</string>
+
+</resources>

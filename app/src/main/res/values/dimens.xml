@@ -1,0 +1,31 @@
+<resources>
+<!--register-->
+    <dimen name="img">50dp</dimen>
+
+    <dimen name="textsize">15sp</dimen>
+    <dimen name="notifictextsize">12sp</dimen>
+    <dimen name="dialogtextsize">13sp</dimen>
+    <dimen name="toolbartextsize">20sp</dimen>
+    <dimen name="smalltextsize">10sp</dimen>
+    <dimen name="btndoubletextsize">11sp</dimen>
+
+    <dimen name="top">10dp</dimen>
+    <!--Login-->
+    <dimen name="logtextsize">35sp</dimen>
+    <dimen name="logtop">20dp</dimen>
+
+    <!--Main-->
+    <dimen name="mainpadding">10dp</dimen>
+    <dimen name="maintop">25dp</dimen>
+    <dimen name="mainmargintop">15dp</dimen>
+    <dimen name="mainmarginright">25dp</dimen>
+
+    <dimen name="mainmarginleft">10dp</dimen>
+    <dimen name="mainmarginbottom">20dp</dimen>
+    <dimen name="txtmainmarginright">10dp</dimen>
+
+    <dimen name="mainmargin">10dp</dimen>
+
+    <dimen name="maintxt">18sp</dimen>
+    <dimen name="dropdown_height">150dp</dimen>
+</resources>
