@@ -52,7 +52,7 @@ public class Maintenance extends AppCompatActivity implements View.OnClickListen
     Context context;
     private ImageView imgSync, imgLogo;
     private TextView txtTitle;
-    LinearLayout progress_bar_lay, txt_norecord, recycler_ll;
+    LinearLayout progress_bar_lay, txt_norecord, recycler_ll, llBack;
 
     private RecyclerView recyclerView;
     LinearLayoutManager layout_manager;
@@ -91,6 +91,8 @@ public class Maintenance extends AppCompatActivity implements View.OnClickListen
         progress_bar_lay = findViewById(R.id.progress_bar_lay);
         txt_norecord = findViewById(R.id.id_no_detail);
         recycler_ll = findViewById(R.id.id_recyclerll);
+        llBack = findViewById(R.id.id_back);
+        llBack.setVisibility(View.GONE);
 
         txtTitle.setText("Maintenance List");
 

@@ -41,9 +41,12 @@ import smarter.com.vehiclemaintenance.utils.ConfigApi;
 import smarter.com.vehiclemaintenance.utils.Constant;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
+import static smarter.com.vehiclemaintenance.utils.Constant.TAG_Alias;
 import static smarter.com.vehiclemaintenance.utils.Constant.TAG_Code;
 import static smarter.com.vehiclemaintenance.utils.Constant.TAG_EmployeeCode;
 import static smarter.com.vehiclemaintenance.utils.Constant.TAG_EmployeeName;
+import static smarter.com.vehiclemaintenance.utils.Constant.TAG_Requester;
+import static smarter.com.vehiclemaintenance.utils.Constant.TAG_Vehicle;
 import static smarter.com.vehiclemaintenance.utils.Constant.TAG_VehicleCode;
 import static smarter.com.vehiclemaintenance.utils.Constant.TAG_Version;
 import static smarter.com.vehiclemaintenance.utils.Constant.isDeviceOnline;
@@ -55,8 +58,8 @@ public class Detail extends AppCompatActivity implements View.OnClickListener {
     private ImageView imgSync;
     private CircleImageView imgUser, imgVehicle;
     private TextView txtTitle, txtAlias, txtRequesterName, txtVehicle, txtDescript;
-    String strCode, strEmpCode, strEmpName, strVehicleCode;
-    private LinearLayout llProgress;
+    String strCode, strEmpCode, strEmpName, strVehicleCode, strRequ, strVehi, strVehiCode;
+    private LinearLayout llProgress, llBack;
     private RelativeLayout llMain;
     private Button btnCreate;
 
@@ -107,12 +110,15 @@ public class Detail extends AppCompatActivity implements View.OnClickListener {
         imgUser = findViewById(R.id.user_pic);
         imgVehicle = findViewById(R.id.vehiclePic);
         btnCreate = findViewById(R.id.id_create_ship);
+        llBack = findViewById(R.id.id_back);
+        llBack.setVisibility(View.VISIBLE);
 
         txtTitle.setText("Vehicle Maintenance Details");
 
         /*init_onClick*/
         imgSync.setOnClickListener(this);
         btnCreate.setOnClickListener(this);
+        llBack.setOnClickListener(this);
 
         baseUrl = ConfigApi.URL_BASE_SERVER;
 
@@ -152,9 +158,12 @@ public class Detail extends AppCompatActivity implements View.OnClickListener {
                         if(strResult.contentEquals("success")){
                             JSONObject result_object = json.getJSONObject("model");
 
-                            txtRequesterName.setText(result_object.getString("CreatedByEmployeeFullName"));
-                            txtVehicle.setText(result_object.getString("VehicleNumber"));
-                            txtAlias.setText(result_object.getString("Alias"));
+                            strRequ = result_object.getString("CreatedByEmployeeFullName");
+                            txtRequesterName.setText(strRequ);
+                            strVehiCode = result_object.getString("VehicleNumber");
+                            txtVehicle.setText(strVehiCode);
+                            strVehi = result_object.getString("Alias");
+                            txtAlias.setText(strVehi);
                             txtDescript.setText(result_object.getString("Description"));
 
                             String strImgCode = result_object.getString("ImageCode");
@@ -291,9 +300,15 @@ public class Detail extends AppCompatActivity implements View.OnClickListener {
                 intentShip.putExtra(TAG_EmployeeCode, strEmpCode);
                 intentShip.putExtra(TAG_EmployeeName, strEmpName);
                 intentShip.putExtra(TAG_VehicleCode, strVehicleCode);
+                intentShip.putExtra(TAG_Requester, strRequ);
+                intentShip.putExtra(TAG_Alias, strVehi);
+                intentShip.putExtra(TAG_Vehicle, strVehiCode);
                 intentShip.putExtra(TAG_Code, strCode);
 
                 startActivity(intentShip);
+                break;
+            case R.id.id_back:
+                finish();
                 break;
         }
     }

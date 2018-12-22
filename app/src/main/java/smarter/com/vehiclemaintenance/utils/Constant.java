@@ -39,6 +39,9 @@ public class Constant {
     public static final String TAG_Code = "Code";
     public static final String TAG_EmployeeName = "EmployeeName";
     public static final String TAG_VehicleCode = "VehicleCode";
+    public static final String TAG_Requester = "Requester";
+    public static final String TAG_Alias = "Alias";
+    public static final String TAG_Vehicle = "Vehicle";
 
     public static final int SUCEESSRESPONSECODE = 200;
     public static final int FAILURERESPONSECODE = 204;//405

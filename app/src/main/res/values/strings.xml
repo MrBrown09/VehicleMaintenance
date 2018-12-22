@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Vehicle Maintenance</string>
+    <string name="app_name">Vehicle Maintenance Request App</string>
 
     <string name="app_version">v 1.0</string>
     <string name="valid_version">1.0</string>
 
-    <string name="app_valid_version">Vehicle Maintenance v 1.0</string>
+    <string name="app_valid_version">Vehicle Maintenance Request App v 1.0</string>
 
     <string name="unaurthorise_user">Unauthorized Access</string>
     <string name="unartho_user"><![CDATA[You are not a registered user to access this app. Please register your mobile phone"'"s ID to the management by click the <b>POST TO REGISTER</b> below. Thank you!]]></string>

@@ -13,290 +13,378 @@
         android:layout_height="wrap_content"
         layout="@layout/toolbar" />
 
-
     <LinearLayout
-        android:layout_below="@+id/id_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="10dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id_toolbar">
 
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Things you have done"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/colorBlack"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Actions"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/colorGray_dark"/>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
-
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/id_oil"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Oil"/>
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/id_break"
-                    android:layout_width="0dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/colorGray_dark"
+                                android:gravity="center"
+                                android:text="Requester"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/colorGray_dark"
+                                android:text="Vehicle"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/id_requester"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textColor="@color/colorBlue"
+                                android:gravity="center"
+                                android:text=""/>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <TextView
+                                    android:id="@+id/id_vehicle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:textColor="@color/colorBlue"
+                                    android:gravity="center"
+                                    android:text="Vehicle"/>
+
+                                <TextView
+                                    android:id="@+id/id_alias"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="0.5"
+                                    android:gravity="center"
+                                    android:textColor="@color/colorBlue"
+                                    android:text="Vehicle"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Things you have done"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/colorBlack"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Select Actions"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/colorGray_dark"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_oil"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Oil"/>
+
+                            <CheckBox
+                                android:id="@+id/id_break"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Break Pad/Shoe"/>
+
+                        </LinearLayout>
+                        //two
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_tire"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Tire"/>
+
+                            <CheckBox
+                                android:id="@+id/id_head"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Head/Tail Light"/>
+
+                        </LinearLayout>
+                        //three
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_air"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Air Filter"/>
+
+                            <CheckBox
+                                android:id="@+id/id_spark"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Spark plug"/>
+
+                        </LinearLayout>
+                        //four
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_turn"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Turn up"/>
+
+                            <CheckBox
+                                android:id="@+id/id_sprocket"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Sprocket"/>
+
+                        </LinearLayout>
+                        //five
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_all"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Over all"/>
+
+                            <CheckBox
+                                android:id="@+id/id_clutch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Clutch Lining"/>
+
+                        </LinearLayout>
+                        //six
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_battery"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Battery"/>
+
+                            <CheckBox
+                                android:id="@+id/id_injector"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Injector Cleaning"/>
+
+                        </LinearLayout>
+                        //seven
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/id_belt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text="Change Belt"/>
+
+                            <CheckBox
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:visibility="invisible"
+                                android:textSize="@dimen/notifictextsize"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Other(s)"/>
+
+                            <EditText
+                                android:id="@+id/id_other"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:background="@drawable/edittext_style"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Current Mileage"/>
+
+                            <EditText
+                                android:id="@+id/id_mileage"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:padding="5dp"
+                                android:background="@drawable/edittext_style"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Remarks"/>
+
+                            <EditText
+                                android:id="@+id/id_remarks"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:maxLines="5"
+                                android:minLines="5"
+                                android:padding="5dp"
+                                android:singleLine="false"
+                                android:gravity="top|left"
+                                android:background="@drawable/edittext_style"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/id_submit"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Break Pad/Shoe"/>
+                    android:background="@drawable/button_style_greeen"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize"
+                    android:textAllCaps="false"
+                    android:layout_marginTop="10dp"
+                    android:text="Submit and mark as Completed"/>
 
             </LinearLayout>
-            //two
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/id_tire"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Tire"/>
-
-                <CheckBox
-                    android:id="@+id/id_head"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Head/Tail Light"/>
-
-            </LinearLayout>
-            //three
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/id_air"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Air Filter"/>
-
-                <CheckBox
-                    android:id="@+id/id_spark"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Spark plug"/>
-
-            </LinearLayout>
-            //four
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/id_turn"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Turn up"/>
-
-                <CheckBox
-                    android:id="@+id/id_sprocket"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Sprocket"/>
-
-            </LinearLayout>
-            //five
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/id_all"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Over all"/>
-
-                <CheckBox
-                    android:id="@+id/id_clutch"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Clutch Lining"/>
-
-            </LinearLayout>
-            //six
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/id_battery"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Battery"/>
-
-                <CheckBox
-                    android:id="@+id/id_injector"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Injector Cleaning"/>
-
-            </LinearLayout>
-            //seven
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/id_belt"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text="Change Belt"/>
-
-                <CheckBox
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center"
-                    android:visibility="invisible"
-                    android:textSize="@dimen/notifictextsize"
-                    android:text=""/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Other(s)"/>
-
-                <EditText
-                    android:id="@+id/id_other"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:background="@drawable/edittext_style"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Current Mileage"/>
-
-                <EditText
-                    android:id="@+id/id_mileage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:padding="5dp"
-                    android:background="@drawable/edittext_style"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Remarks"/>
-
-                <EditText
-                    android:id="@+id/id_remarks"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:maxLines="5"
-                    android:minLines="5"
-                    android:padding="5dp"
-                    android:singleLine="false"
-                    android:gravity="top|left"
-                    android:background="@drawable/edittext_style"/>
-
-            </LinearLayout>
-
-        </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/id_submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_style_greeen"
-        android:textColor="@color/colorWhite"
-        android:textSize="@dimen/textsize"
-        android:textAllCaps="false"
-        android:layout_alignParentBottom="true"
-        android:text="Submit and mark as Completed"/>
 </RelativeLayout>

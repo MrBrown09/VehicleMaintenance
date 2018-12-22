@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.json.JSONObject;
@@ -42,12 +43,14 @@ public class Update extends AppCompatActivity implements View.OnClickListener {
     public static Activity activity;
     Context context;
     private ImageView imgSync, imgLogo;
-    private TextView txtTitle;
+    private TextView txtTitle, tvRequester, tvVehicle, tvAlias;
     private Button btnSubmit;
+    LinearLayout llBack;
     private CheckBox chkOil, chkBreak, chkTire, chkHead, chkAir, chkSpark, chkTurn,
             chkSprocket, chkAll, chkClutch, chkBattery, chkInjector, chkBelt;
     private EditText edtOthers, edtMileage, edtRemark;
-    String strChkAction="", strOther, strMileage, strRemark, strEmpCode, strEmpName, strVehiCode, strLogEmpCode, strLogEmpName, strCode;
+    String strChkAction="", strOther, strMileage, strRemark, strEmpCode, strEmpName, strVehiCode, strLogEmpCode,
+            strLogEmpName, strCode, strAlias, strRequester, strVehicle;
     Dialog dialog;
     private Retrofit retrofit;
     private int mStatusCode;
@@ -89,6 +92,8 @@ public class Update extends AppCompatActivity implements View.OnClickListener {
         imgSync.setVisibility(View.INVISIBLE);
         txtTitle = findViewById(R.id.id_txt_name);
         btnSubmit = findViewById(R.id.id_submit);
+        llBack = findViewById(R.id.id_back);
+        llBack.setVisibility(View.VISIBLE);
 
         txtTitle.setText("Vehicle Maintenance Update");
 
@@ -108,6 +113,9 @@ public class Update extends AppCompatActivity implements View.OnClickListener {
         edtOthers = findViewById(R.id.id_other);
         edtMileage = findViewById(R.id.id_mileage);
         edtRemark = findViewById(R.id.id_remarks);
+        tvRequester = findViewById(R.id.id_requester);
+        tvAlias = findViewById(R.id.id_alias);
+        tvVehicle = findViewById(R.id.id_vehicle);
 
         /*getIntentValue*/
         if( getIntent().getExtras() != null) {
@@ -115,6 +123,13 @@ public class Update extends AppCompatActivity implements View.OnClickListener {
             strEmpName = getIntent().getStringExtra(Constant.TAG_EmployeeName);
             strVehiCode = getIntent().getStringExtra(Constant.TAG_VehicleCode);
             strCode = getIntent().getStringExtra(Constant.TAG_Code);
+            strRequester = getIntent().getStringExtra(Constant.TAG_Requester);
+            strAlias = getIntent().getStringExtra(Constant.TAG_Alias);
+            strVehicle = getIntent().getStringExtra(Constant.TAG_Vehicle);
+
+            tvRequester.setText(strRequester);
+            tvVehicle.setText(strVehicle);
+            tvAlias.setText(strAlias);
         }
         strLogEmpCode = sharePrefs.getString(Constant.TAG_EmployeeCode,null);
         strLogEmpName = sharePrefs.getString(Constant.TAG_EmployeeName,null);
@@ -131,6 +146,7 @@ public class Update extends AppCompatActivity implements View.OnClickListener {
         /*init_onClick*/
         imgSync.setOnClickListener(this);
         btnSubmit.setOnClickListener(this);
+        llBack.setOnClickListener(this);
     }
 
 
@@ -213,6 +229,10 @@ public class Update extends AppCompatActivity implements View.OnClickListener {
                             "Fill all fields!", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
+                break;
+
+            case R.id.id_back:
+                finish();
                 break;
         }
     }
